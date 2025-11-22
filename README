@@ -1,0 +1,53 @@
+🚢 Submarino RC con Control Web (ESP32)
+
+Este proyecto consiste en un Submarino a Radio Control controlado enteramente vía WiFi mediante un ESP32.
+
+El sistema crea su propio Punto de Acceso (Access Point), permitiendo conectar cualquier celular o computadora para controlar la dirección, los tanques de lastre y la propulsión a través de una Interfaz Web moderna y reactiva.
+
+🚀 Características Principales
+
+El firmware está altamente optimizado para evitar bloqueos y caídas de tensión, utilizando técnicas de programación asíncrona.
+
+📡 Conexión WiFi Directa: Crea una red SubmarinoESP32 independiente. No requiere router.
+
+🛑 Parada de Emergencia: Botón físico (en la web) y lógico (timeouts) que detiene todos los actuadores inmediatamente.
+
+🌡️ Telemetría en Tiempo Real: Monitoreo constante de la temperatura interna (Sensor DS18B20) y del estado del sistema (RAM libre, Uptime).
+
+⚙️ Control de Lastre Automatizado: Temporizadores de seguridad para el llenado (60s) y vaciado (70s) de los tanques.
+
+🛠️ Hardware Utilizado
+
+Microcontrolador: ESP32 (DevKit V1).
+
+Lastre: Bomba de agua reversible controlada por Puente H (L298N o similar).
+
+Propulsión: Bomba JT800 controlada vía Relé (con protección Snubber).
+
+Sensores: DS18B20 (Temperatura).
+
+Alimentación: Sistema de fuentes separadas para Lógica (ESP32) y Potencia (Motores) para evitar brownouts.
+
+💻 Tecnologías del Proyecto
+
+C++ / Arduino: Lógica de control del ESP32.
+
+HTML5 / CSS3: Interfaz de usuario responsiva (Móvil/PC) almacenada en memoria Flash (PROGMEM).
+
+🔧 Instalación y Uso
+
+Cargar el código SubmarinoFinal.ino en el ESP32 usando Arduino IDE.
+
+Conectar el hardware según el diagrama de pines (definido en el código).
+
+Encender el submarino.
+
+Conectar el celular/PC a la red WiFi:
+
+SSID: SubmarinoESP32
+
+Pass: 12345678
+
+Abrir el navegador e ir a: http://192.168.4.1
+
+Proyecto desarrollado para Universidad Austral (Tecnicas Digitales)
